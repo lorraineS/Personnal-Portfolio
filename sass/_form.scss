@@ -1,0 +1,16 @@
+/* ==|====================
+   Module/Box
+   ======================= */
+
+input, textarea {
+  border: solid 1px #ddd;
+  border-radius: 4px;
+  display: block;
+  font-family: $font1;
+  font-size: 16px;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  width: 70%;
+}
+
+textarea { height: 135px; }

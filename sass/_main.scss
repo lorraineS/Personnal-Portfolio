@@ -1,0 +1,77 @@
+// ----------------------
+// == Layout/Main
+// ----------------------
+
+.article {
+  @include display-flex;
+  margin-bottom: 50px;
+  &:first-child {
+    margin-top: 60px;
+  }
+}
+
+.article__subtitle {
+  color: $grey;
+  line-height: 1.5;
+}
+
+.article__img img {
+  display: block;
+  max-width: 100%;
+}
+
+.article--small {
+  .article__title {
+    font-size: 26px;
+    line-height: 1;
+  }
+}
+
+.article--works {
+  border-bottom: 1px solid #e0dddd;
+  .article__img { width: 45%; }
+  .article__content {
+    padding-left: 35px;
+    width: 55%;
+  }
+}
+
+.article__more {
+  text-transform: uppercase;
+  &:hover { padding-left: 5px; }
+}
+
+.article--intro {
+  border-bottom: 1px solid #e0dddd;
+  .article__img { flex: 0 1 60%; }
+  .article__content { padding: 10px 0 0 35px; }
+  .article__title { font-size: 44px; }
+  .article__subtitle {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+}
+
+.article--services {
+  border-bottom: 1px solid #e0dddd;
+  flex-flow: row wrap;
+  padding-bottom: 45px;
+  .article__content {
+    padding: 20px;
+    width: 33.33%;
+  }
+}
+
+.article--quote {
+  justify-content: center;
+  .article__content {
+    padding-left: 35px;
+    width: 55%
+  }
+  .article__subtitle { font-style: italic; }
+}
+
+.article--contact {
+  display: inherit;
+  .contact__form { padding-top: 40px; }
+}

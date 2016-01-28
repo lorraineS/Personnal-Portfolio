@@ -1,0 +1,72 @@
+// ----------------------
+// == Base
+// ----------------------
+
+* { @include box-sizing; }
+
+body {
+  color: $color2; // == $blue
+  font-family: $font1; // == Open Sans
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $color1; // == $red
+  font-family: $font2; // == Montserrat
+  font-weight: 700;
+  text-decoration: none;
+
+  &:hover { @include transition-duration(0.3s); }
+}
+
+i { padding-left: 5px; }
+
+h1,
+h2 {
+  font-family: $font2;
+  margin: 5px 0 0 0;
+  text-transform: uppercase;
+}
+
+p { color: $grey; }
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 990px;
+}
+
+.small--text { font-size: 13px; }
+
+.dot--red { color: $color1; }
+
+.dot--blue { color: $color2; }
+
+.btn {
+  @include border-radius(5px);
+  background-color: $color1;
+  border: 2px solid transparent;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $font2;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 15px 20px;
+
+  &:hover {
+    @include transition-duration(0.3s);
+    background-color: #fff;
+    border: 2px solid $color1;
+    color: $color1;
+  }
+}
+
+.btn--skills {
+  @extend .btn;
+  font-weight: 400;
+  padding: 3px 10px !important;
+  margin-bottom: 7px;
+}

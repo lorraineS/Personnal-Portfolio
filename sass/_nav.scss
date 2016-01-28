@@ -1,0 +1,52 @@
+// ----------------------
+// == Navigation
+// ----------------------
+
+.nav {
+  @include display-flex;
+  justify-content: space-between;
+ }
+
+  .nav__logo {
+    @include border-radius(0 0 4px 4px);
+    background-color: $red;
+    height: 75px;
+    text-align: center;
+    min-width: 140px;
+
+    a {
+      color: #fff;
+      font-size: 20px;
+      line-height: 100px;
+      text-transform: uppercase;
+    }
+  }
+
+  .nav__links {
+    @include display-flex;
+    align-items: center;
+    a {
+      color: #3d4b54;
+      font-size: 14px;
+      padding-left: 25px;
+      text-transform: uppercase;
+
+      &:first-child { padding-left: 0; }
+
+      &:hover {
+        @include transition-duration(0.3s);
+        color: $red;
+      }
+
+      .nav--current { color: $red; }
+    }
+  }
+
+  .nav__socials {
+    padding-left: 25px;
+    i {
+      color: $red;
+      font-size: 16px;
+    }
+
+  }

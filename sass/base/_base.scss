@@ -40,9 +40,10 @@ p { color: $grey; }
 
 .small--text { font-size: 13px; }
 
-.dot--red { color: $color1; }
+.is-red,
+.is-active { color: $color1; }
 
-.dot--blue { color: $color2; }
+.is-blue { color: $color2; }
 
 .btn {
   @include border-radius(5px);

@@ -3,7 +3,7 @@ Steve Lorraine - Portfolio
 
 My personal portfolio : http://steve-lorraine.fr
 
-> **Made width:**
+> **Made with:**
 >- SASS (Compass)
 >- BEM syntax
 

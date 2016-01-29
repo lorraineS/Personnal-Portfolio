@@ -1,18 +1,16 @@
 @import "compass";
 
-/* Site settings */
-@import "site-settings";
-
 /* Base */
-@import "base";
+@import "base/site-settings";
+@import "base/base";
 
-/* Layouts */
-@import "nav";
-@import "main";
-@import "footer";
+/* Components */
+@import "components/nav";
+@import "components/main";
+@import "components/footer";
 
 /* Modules */
-@import "form";
+@import "components/form";
 
 /* Responsive */
 @import "responsive";

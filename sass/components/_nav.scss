@@ -37,8 +37,6 @@
         @include transition-duration(0.3s);
         color: $red;
       }
-
-      .nav--current { color: $red; }
     }
   }
 

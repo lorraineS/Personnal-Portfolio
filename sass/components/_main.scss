@@ -63,6 +63,12 @@
 }
 
 .article--contact {
-  display: inherit;
-  .contact__form { padding-top: 40px; }
+  a {
+    color: inherit;
+    font-weight: normal;
+   }
+   i { padding: 0 3px 0 0; }
+   i:nth-last-child(2) { padding-left: 15px; }
+  .contact__form { padding-top: 5px; }
+
 }

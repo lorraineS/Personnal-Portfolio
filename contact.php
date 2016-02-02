@@ -50,31 +50,38 @@
       <div class="article  article--contact">
         <div class="article__content">
           <h1 class="article__title">Dites moi bonjour, <br>Laissez-moi une message <span class="dot">!</span></h1>
+          <p class="article__subtitle">
+            <i class="fa fa-envelope-o is-red"></i> <a HREF="mailto:lorraine.univ@gmail.com">lorraine.univ@gmail.com</a>
+            <i class="fa fa-skype is-red"></i> <a href="#">lorraine.univ</a>
+          </p>
+          <p class="article__subtitle">
+            Une proposition d'emploi ? Une alternance ou un projet freelance ? <br> Laissez-moi un message, je vous répondrai dans les plus bref délais.
+          </p>
           <form class="contact__form" method="POST" action="">
             <input type="text" name="name" id="name" placeholder="Votre nom *">
             <input type="text" name="prenom" id="prenom" placeholder="Votre prenom *">
             <input type="email" name="email" id="email" placeholder="Votre email *">
-            <textarea type="text" name="message" id="message" placeholder="Votre message *"></textarea>
+            <textarea type="text" name="message" id="message" placeholder="Votre message *"></textarea> <br>
             <button class="btn">Envoyer</button>
           </form> <br>
           <?php
-          if (isset($_POST) && isset($_POST['name']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['message'])) {
+            if (isset($_POST) && isset($_POST['name']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['message'])) {
               if (!empty($_POST['name']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['message'])) {
-                  $destinataire = "lorraine.univ@gmail.com";
-                  $sujet = "Demande de contact";
-                  $message = "Nom : " . $_POST['name'] . "\r\n";
-                  $message = "Adresse email : " . $_POST['email'] . "\r\n";
-                  $message = "Message : " . $_POST['message'] . "\r\n";
-                  $entete = 'From: ' . $_POST['email'] . "\r\n" .
-                          'Reply-To: ' . $_POST['email'] . "\r\n" .
-                          'X-Mailer: PHP/' . phpversion();
-                  if (mail($destinataire, $sujet, $message, $entete)) {
-                      echo 'Message envoyé.';
-                  } else {
-                      echo "Une erreur est survenue lors de l'envoi du formulaire par email. Veuillez réessayer.";
-                  }
+                $destinataire = "lorraine.univ@gmail.com";
+                $sujet = "Demande de contact";
+                $message = "Nom : " . $_POST['name'] . "\r\n";
+                $message = "Adresse email : " . $_POST['email'] . "\r\n";
+                $message = "Message : " . $_POST['message'] . "\r\n";
+                $entete = 'From: ' . $_POST['email'] . "\r\n" .
+                        'Reply-To: ' . $_POST['email'] . "\r\n" .
+                        'X-Mailer: PHP/' . phpversion();
+                if (mail($destinataire, $sujet, $message, $entete)) {
+                  echo 'Message envoyé.';
+                } else {
+                  echo "Une erreur est survenue lors de l'envoi du formulaire par email. Veuillez réessayer.";
+                }
               }
-          }
+            }
           ?>
         </div>
       </div>

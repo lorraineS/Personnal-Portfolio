@@ -46,21 +46,35 @@
     </header>
 
     <section class="main">
-      <div class="article  article--works">
-        <div class="article__img">
-          <img src="images/works/portfolio-perso.jpg" alt="Capture d'écran portfolio personnel" />
-        </div>
+      <div class="article  article--contact">
         <div class="article__content">
-          <h1 class="article__title">Portfolio personnel<span class="is-red">.</span></h1>
-          <p class="article__subtitle">Portfolio personnel réalisé afin d'acroîte ma visibilité professionnelle. <br>
-            J'en ai profité pour mettre en pratique la méthodologie BEM. Le code source de ce site est entièrement disponible sur <a href="https://github.com/lorraineS/Personnal-Portfolio">Github</a>.
-          </p>
-          <p>
-            <span class="btn--skills">BEM</span>
-            <span class="btn--skills">Flexbox</span>
-            <span class="btn--skills">Sass</span>
-          </p>
-          <a href="http://steve-lorraine.fr/" class="article__more">Voir le site <i class="fa fa-long-arrow-right"></i></a>
+          <h1 class="article__title">Dites moi bonjour, <br>Laissez-moi une message <span class="dot">!</span></h1>
+          <form class="contact__form" method="POST" action="">
+            <input type="text" name="name" id="name" placeholder="Votre nom *">
+            <input type="text" name="prenom" id="prenom" placeholder="Votre prenom *">
+            <input type="email" name="email" id="email" placeholder="Votre email *">
+            <textarea type="text" name="message" id="message" placeholder="Votre message *"></textarea>
+            <button class="btn">Envoyer</button>
+          </form> <br>
+          <?php
+          if (isset($_POST) && isset($_POST['name']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['message'])) {
+              if (!empty($_POST['name']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['message'])) {
+                  $destinataire = "lorraine.univ@gmail.com";
+                  $sujet = "Demande de contact";
+                  $message = "Nom : " . $_POST['name'] . "\r\n";
+                  $message = "Adresse email : " . $_POST['email'] . "\r\n";
+                  $message = "Message : " . $_POST['message'] . "\r\n";
+                  $entete = 'From: ' . $_POST['email'] . "\r\n" .
+                          'Reply-To: ' . $_POST['email'] . "\r\n" .
+                          'X-Mailer: PHP/' . phpversion();
+                  if (mail($destinataire, $sujet, $message, $entete)) {
+                      echo 'Message envoyé.';
+                  } else {
+                      echo "Une erreur est survenue lors de l'envoi du formulaire par email. Veuillez réessayer.";
+                  }
+              }
+          }
+          ?>
         </div>
       </div>
     </section>

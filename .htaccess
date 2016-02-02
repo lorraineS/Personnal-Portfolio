@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteRule ^accueil$     index.html [QSA]
+RewriteRule ^portfolio$   portfolio.html [QSA]
+RewriteRule ^contact$     contact.php [QSA]

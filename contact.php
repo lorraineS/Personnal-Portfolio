@@ -28,7 +28,7 @@
           <a href="accueil">Steve<span class="is-blue">. L</span></a>
         </div>
         <div class="nav__links">
-          <a href="accueil" class="nav--current">Accueil</a>
+          <a href="accueil" class="is-active">Accueil</a>
           <a href="portfolio">Portfolio</a>
           <a href="contact">Contact</a>
           <div class="nav__socials">
@@ -51,10 +51,6 @@
         <div class="article__content">
           <h1 class="article__title">Dites moi bonjour, <br>Laissez-moi une message <span class="dot">!</span></h1>
           <p class="article__subtitle">
-            <i class="fa fa-envelope-o is-red"></i> <a HREF="mailto:lorraine.univ@gmail.com">lorraine.univ@gmail.com</a>
-            <i class="fa fa-skype is-red"></i> <a href="#">lorraine.univ</a>
-          </p>
-          <p class="article__subtitle">
             Une proposition d'emploi ? Une alternance ou un projet freelance ? <br> Laissez-moi un message, je vous répondrai dans les plus bref délais.
           </p>
           <form class="contact__form" method="POST" action="">
@@ -62,7 +58,7 @@
             <input type="text" name="prenom" id="prenom" placeholder="Votre prenom *">
             <input type="email" name="email" id="email" placeholder="Votre email *">
             <textarea type="text" name="message" id="message" placeholder="Votre message *"></textarea> <br>
-            <button class="btn">Envoyer</button>
+            <button type="submit" class="btn">Envoyer</button>
           </form> <br>
           <?php
             if (isset($_POST) && isset($_POST['name']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['message'])) {
@@ -78,7 +74,7 @@
                 if (mail($destinataire, $sujet, $message, $entete)) {
                   echo 'Message envoyé.';
                 } else {
-                  echo "Une erreur est survenue lors de l'envoi du formulaire par email. Veuillez réessayer.";
+                  echo 'Une erreur est survenue lors de l\'envoi du formulaire par email. Veuillez réessayer.';
                 }
               }
             }

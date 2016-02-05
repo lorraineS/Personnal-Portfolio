@@ -8,6 +8,6 @@ My personal portfolio : http://steve-lorraine.fr
 >- BEM syntax
 
 > **Todo:**
->- Build a blog width Grav CMS.
+>- Build a blog
 
 Enjoy!
